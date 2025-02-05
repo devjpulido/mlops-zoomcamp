@@ -56,3 +56,25 @@ echo "Cleaning up..."
 rm /tmp/anaconda.sh
 
 echo "Anaconda has been installed and initialized successfully."
+
+
+### Useful Conda Commands:
+
+## Lista conda environments
+# conda env list
+
+## Stop conda temporally
+# conda deactivate
+
+## Disable conda initialization
+# conda config --set auto_activate_base false
+
+
+## Activate conda
+# conda activate base
+
+## Enable conda initialization
+# conda config --set auto_activate_base true
+
+## Activate a specific environment
+# conda activate myenv
