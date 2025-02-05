@@ -1,7 +1,8 @@
 #!/bin/bash
 
-DOCKER_USERNAME="root"
-DOCKER_GROUP="root"
+DOCKER_USERNAME="mlopsadm"
+DOCKER_GROUP="mlopsadm"
+DOCKER_USER_HOME="/home/${DOCKER_USERNAME}"
 DOCKER_DIR="/opt/docker"
 DOCKER_COMPOSE_VERSION="2.11.2"
 
@@ -63,8 +64,8 @@ sudo chmod +x ${DOCKER_DIR}/docker-compose
 
 # Add Docker Compose to PATH
 echo "Adding Docker Compose to PATH..."
-echo 'export PATH=$PATH:${DOCKER_DIR}' >> ~/.bashrc
-source ~/.bashrc
+echo 'export PATH=$PATH:'"$DOCKER_DIR" >> ${DOCKER_USER_HOME}/.bashrc
+source ${DOCKER_USER_HOME}/.bashrc
 
 # Add DOCKER_USERNAME to sudo and docker groups if not root
 if [ "$DOCKER_USERNAME" != "root" ] && [ "$DOCKER_GROUP" != "root" ]; then
